@@ -49,4 +49,4 @@ I = 10
 R = 0
 beta = 0.50
 gamma = 1/10
-mu = 1/15000 # Produces error for some values
+mu = 1/15000 # Stiffness problem with values ~ 1/25000 using default integrator

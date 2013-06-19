@@ -12,6 +12,6 @@ functions.
 - *LV.psc* : A basic predator-prey model with no immigration/emigration
 
 ###Known Bugs:
-- Birth/death model is currently has an integration error for certain values of mu. This
-error can be reproduced in SciPy, which uses the same integration package as PySCeS, but not
-in R, despite the same underlying lsoda solver.
+- Birth/death model currently produces an integration error for some values of mu ~ 25000.
+This error can be reproduced in SciPy using odeint. SciPy's ode.integrate and R both solve
+the system just fine - this appears to be a fleeting stiffness problem.
