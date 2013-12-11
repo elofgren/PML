@@ -32,5 +32,5 @@ rabbit = 6.0
 fox = 3.0
 alpha = 2.0
 beta = 1.0
-delta = 3.0
+delta = 0.50
 gamma = 1.0
