@@ -24,4 +24,4 @@ fleeting stiffness problem. Haven't tried this with other PySCeS solvers.
 [1] E.T. Lofgren et. al. A Mathematical Model to Evaluate the Routine Use of
 Fecal Microbiota Transplantation to Prevent Incident and Recurrent *Clostridium
 difficile* Infection. *Infection Control and Hospital Epidemiology*, Vol. 35,
-No. 1 (2014) pp. 18-27
+No. 1 (2014) pp. 18-27 http://www.jstor.org/stable/10.1086/674394
