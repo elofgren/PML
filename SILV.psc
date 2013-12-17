@@ -9,7 +9,7 @@ Description: PySCes Model Description Language Implementation of SI Epidemic Mod
 Species_In_Conc: False
 Output_In_Conc: False
 
-# Differential Equations as Reactions
+# S and I Reactions for Prey
 R1:
 	S > I
 	beta*S*I/(S+I)
@@ -28,13 +28,38 @@ R4:
 	
 R6:
 	$pool > S
-	mu*(S+I)
+	mu*(S+I)*1.20
+	
+# Predation Reactions
+R7:
+	S > Fox
+	rho*S*Fox*delta
 
+R8:
+	S > $pool
+	rho*S*Fox*(1-delta)
+
+R7:
+	I > Fox
+	(rho*1.20)*I*Fox*(delta*0.80)
+
+R8:
+	I > $pool
+	(rho*1.20)*I*Fox*(1-(delta*0.80))
+	
+R9:
+	Fox > $pool
+	Fox*omega
 
 # Parameter Values
-# Initial population set at ~steady state for beta = 0.12, gamma = 0.10 and mu = 1/1826
-S = 84
-I = 16
-beta = 0.12
-gamma = 1/10
-mu = 1/1826 # Stiffness problem with values ~ 1/25000 using default integrator
+S = 85
+I = 15
+Fox = 5
+beta = 1.2
+gamma = 1
+mu = 1/183
+
+# Predation Parameters
+rho = 0.001
+delta = 0.20
+omega = 1/283
