@@ -11,7 +11,7 @@ Output_In_Conc: False
 
 # Prey Reactions
 R1:
-	rabbit > fox
+	rabbit > fox + success
 	rabbit*fox*beta*delta
 
 R2:
@@ -34,6 +34,7 @@ R5:
 
 # Parameter Values
 rabbit = 6
+success = 0
 fox = 3
 notfox = 0
 alpha = 2.0
