@@ -11,25 +11,31 @@ Output_In_Conc: False
 
 # Prey Reactions
 R1:
-	rabbit > $pool
-	rabbit*fox*beta
+	rabbit > fox
+	rabbit*fox*beta*delta
 
 R2:
+	rabbit > notfox
+	rabbit*fox*beta*(1-delta)
+
+R3:
 	$pool > rabbit
 	rabbit*alpha
 
 # Predator Reactions
-R3:
+R4:
 	fox > $pool
 	fox*gamma
-	
-R4:
-	$pool > fox
-	fox*rabbit*delta
+
+# Cleanup Reactions - Keep "Notfox" from growing to enormous size
+R5:
+	notfox > $pool
+	notfox*1
 
 # Parameter Values
 rabbit = 6
 fox = 3
+notfox = 0
 alpha = 2.0
 gamma = 1.0
 beta = 1.0
