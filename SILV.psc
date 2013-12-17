@@ -32,8 +32,9 @@ R6:
 
 
 # Parameter Values
-S = 990
-I = 10
+# Initial population set at ~steady state for beta = 0.12, gamma = 0.10 and mu = 1/1826
+S = 84
+I = 16
 beta = 0.12
 gamma = 1/10
 mu = 1/1826 # Stiffness problem with values ~ 1/25000 using default integrator
