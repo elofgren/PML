@@ -12,7 +12,7 @@ Output_In_Conc: False
 
 R1:
 	$pool > invader
-	invader*r1*(1-((invader+(alpha1*native))/K1))
+	invader*r1*(1-((invader+alpha1*native)/K1))
 
 R2:
 	$pool > invader
@@ -24,7 +24,7 @@ R3:
 
 R4:
 	$pool > native
-	native*r2*(1-((native+(alpha2*invader))/K2))	
+	native*r2*(1-((native+alpha2*invader)/K2))	
 
 # Parameter Values
 invader = 5
