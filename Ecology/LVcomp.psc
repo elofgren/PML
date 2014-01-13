@@ -13,22 +13,18 @@ Output_In_Conc: False
 R1:
 	$pool > invader
 	invader*r1*(1-((invader+(alpha1*native))/K1))
-	
+
 R2:
 	$pool > invader
-	invader*invader_in
+	invader*migration*(1-(invader/K1))
 
 R3:
 	invader > $pool
-	invader*invader_out	
+	invader*migration*(1-(invader/K1))
 
 R4:
 	$pool > native
-	native*r2*(1-((native+(alpha2*invader))/K2))
-	
-R5:
-	$pool > native
-	invader*native_in	
+	native*r2*(1-((native+(alpha2*invader))/K2))	
 
 # Parameter Values
 invader = 5
@@ -37,8 +33,6 @@ K1 = 15
 native = 10
 r2 = 1.0
 K2 = 10
-alpha1 = 0.50
-alpha2 = 1.50
-invader_out = 2.0
-invader_in = 1.75
-native_in = 0.25
+alpha1 = 0.75
+alpha2 = 0.60
+migration = 2.00
