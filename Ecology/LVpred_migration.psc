@@ -16,30 +16,31 @@ R1:
 
 R2:
 	$pool > rabbit
-	rabbit*alpha*(1-(rabbit/K))
+	rabbit*alpha*(1-(rabbit/K_rabbit))
 
 # Predator Reactions (from consumption of prey)
 	
 R3:
 	$pool > fox
-	fox*rabbit*delta
+	fox*rabbit*delta*(1-(fox/K_fox))
 
 # Predator Reactions (from intrinsic birth/death rates)
 
 R4:
     fox > $pool
-    fox*gamma
+    fox*gamma*(1-(fox/K_fox))
 
 R5:
     $pool > fox
-    fox*mu
+    fox*mu*(1-(fox/K_fox))
 
 # Parameter Values
 rabbit = 6
 fox = 3
-alpha = 2.0
+alpha = 10.0
 gamma = 1.0
 mu = 1.0
-beta = 1.0
-delta = 0.33
-K = 100
+beta = 0.45
+delta = 0.10
+K_rabbit = 10
+K_fox = 15
